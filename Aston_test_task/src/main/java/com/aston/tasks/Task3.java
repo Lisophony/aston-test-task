@@ -12,6 +12,7 @@ public class Task3 extends BaseTask {
         Arrays.stream(getArray()).forEach(x-> {
             if (x % 3 == 0) {
                 System.out.println(x);
-            }});
+            }
+        });
     }
 }
