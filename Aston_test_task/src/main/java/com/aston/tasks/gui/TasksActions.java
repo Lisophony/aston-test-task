@@ -18,7 +18,7 @@ public class TasksActions {
 
     public static String getArrayDivisibleBy3(String input) {
         try {
-            int[] array = Arrays.stream(input.split(" ")).mapToInt(Integer::parseInt).toArray();
+            int[] array = Arrays.stream(input.split("\\s+")).mapToInt(Integer::parseInt).toArray();
             StringBuilder sb = new StringBuilder();
             Arrays.stream(array).forEach(x-> {
                 if (x % 3 == 0) {
