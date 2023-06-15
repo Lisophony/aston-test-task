@@ -40,7 +40,7 @@ public class TasksActions {
                     sb.append(" ");
                 }
             });
-            return sb.toString();
+            return sb.toString().trim();
         }
         catch (NumberFormatException e) {
             return "Проверьте введённые данные";

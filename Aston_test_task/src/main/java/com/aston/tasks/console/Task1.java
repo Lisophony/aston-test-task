@@ -8,8 +8,7 @@ public class Task1 extends BaseTask {
         try {
             String input = scanner.nextLine().trim();
             if(input.isEmpty()) throw new EmptyInputException();
-            int number = Integer.parseInt(input);
-            if(number > 7) System.out.println("Привет!");
+            if(Integer.parseInt(input) > 7) System.out.println("Привет!");
         }
         catch (NumberFormatException e) {
             System.out.println("Введённые данные не корректны");
