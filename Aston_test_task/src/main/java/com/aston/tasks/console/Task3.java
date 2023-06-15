@@ -8,6 +8,7 @@ public class Task3 extends BaseTask {
     }
 
     public static void printDivisibleBy3() {
+        System.out.println("Введите массив чисел");
         Arrays.stream(getArray(scanner.nextLine().split(" "))).forEach(x-> {
             if (x % 3 == 0) {
                 System.out.println(x);
