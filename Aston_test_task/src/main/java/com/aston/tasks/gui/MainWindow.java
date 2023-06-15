@@ -1,29 +1,28 @@
 package com.aston.tasks.gui;
 
-import com.aston.tasks.Task3;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class MainWindow extends JFrame implements ActionListener {
     private final JLabel label1;
     private final JLabel label2;
     private final JLabel label3;
-    private final JTextField task1;
-    private final JTextField task2;
-    private final JTextField task3;
+    private final JTextField input1;
+    private final JTextField input2;
+    private final JTextField input3;
     private final JTextField outputText1;
     private final JTextField outputText2;
     private final JTextField outputText3;
-    private final JButton confirm;
+    private final JButton okButton;
 
     public MainWindow() {
         super("Aston test tasks");
         setSize(700, 300);
         setLocation(700, 200);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.X_AXIS));
@@ -34,25 +33,25 @@ public class MainWindow extends JFrame implements ActionListener {
         JPanel outputsPanel = new JPanel();
         outputsPanel.setLayout(new BoxLayout(outputsPanel, BoxLayout.Y_AXIS));
 
-        label1 = new JLabel("Say Hello");
-        label2 = new JLabel("Hi Viacheslav");
-        label3 = new JLabel("Print array");
-        task1 = new JTextField(10);
-        task2 = new JTextField(10);
-        task3 = new JTextField(10);
+        label1 = new JLabel("Привет!");
+        label2 = new JLabel("Привет, Вячеслав");
+        label3 = new JLabel("Массив из значений кратных 3");
+        input1 = new JTextField(10);
+        input2 = new JTextField(10);
+        input3 = new JTextField(10);
 
-        confirm = new JButton("OK");
-        confirm.addActionListener(this);
+        okButton = new JButton("OK");
+        okButton.addActionListener(this);
 
         outputText1 = new JTextField(10);
         outputText2 = new JTextField(10);
         outputText3 = new JTextField(10);
 
-        Font textfieldFont = task1.getFont().deriveFont(Font.PLAIN, 14f);
+        Font textfieldFont = input1.getFont().deriveFont(Font.PLAIN, 14f);
 
-        task1.setFont(textfieldFont);
-        task2.setFont(textfieldFont);
-        task3.setFont(textfieldFont);
+        input1.setFont(textfieldFont);
+        input2.setFont(textfieldFont);
+        input3.setFont(textfieldFont);
 
         outputText1.setFont(textfieldFont);
         outputText2.setFont(textfieldFont);
@@ -62,16 +61,16 @@ public class MainWindow extends JFrame implements ActionListener {
         outputText3.setEditable(false);
 
         inputsPanel.add(label1);
-        inputsPanel.add(task1);
+        inputsPanel.add(input1);
         inputsPanel.add(Box.createRigidArea(new Dimension(0, 40)));
         inputsPanel.add(label2);
-        inputsPanel.add(task2);
+        inputsPanel.add(input2);
         inputsPanel.add(Box.createRigidArea(new Dimension(0, 40)));
         inputsPanel.add(label3);
-        inputsPanel.add(task3);
+        inputsPanel.add(input3);
         inputsPanel.add(Box.createRigidArea(new Dimension(0, 30)));
 
-        buttonOkPanel.add(confirm);
+        buttonOkPanel.add(okButton);
 
         outputsPanel.add(Box.createRigidArea(new Dimension(0, 16)));
         outputsPanel.add(outputText1);
@@ -94,19 +93,8 @@ public class MainWindow extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        int number = Integer.parseInt(task1.getText());
-        if(number > 7) outputText1.setText("Привет!");
-
-        outputText2.setText(task2.getText().equals("Вячеслав") ? "Привет, Вячеслав" : "Нет такого имени");
-
-        int[] array = Task3.getArray(task3.getText().split(" "));
-        StringBuilder sb = new StringBuilder();
-        Arrays.stream(array).forEach(x-> {
-            if (x % 3 == 0) {
-                sb.append(x);
-                sb.append(" ");
-            }
-        });
-        outputText3.setText(sb.toString());
+        outputText1.setText(TasksActions.sayHello(input1.getText()));
+        outputText2.setText(TasksActions.helloViacheslav(input2.getText()));
+        outputText3.setText(TasksActions.getArrayDivisibleBy3(input3.getText()));
     }
 }
