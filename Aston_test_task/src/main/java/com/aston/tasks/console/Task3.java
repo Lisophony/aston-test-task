@@ -1,5 +1,7 @@
 package com.aston.tasks.console;
 
+import exceptions.EmptyInputException;
+
 import java.util.Arrays;
 
 public class Task3 extends BaseTask {
@@ -9,10 +11,21 @@ public class Task3 extends BaseTask {
 
     public static void printDivisibleBy3() {
         System.out.println("Введите массив чисел");
-        Arrays.stream(getArray(scanner.nextLine().split(" "))).forEach(x-> {
-            if (x % 3 == 0) {
-                System.out.println(x);
-            }
-        });
+        try {
+            String input = scanner.nextLine();
+            if(input.isEmpty()) throw new EmptyInputException();
+            Arrays.stream(getArray(input.split(" "))).forEach(x-> {
+                if (x % 3 == 0) {
+                    System.out.println(x);
+                }
+            });
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Введённые данные не корректны");
+            printDivisibleBy3();
+        } catch (EmptyInputException e) {
+            System.out.println(e.getMessage());
+            printDivisibleBy3();
+        }
     }
 }
