@@ -19,7 +19,7 @@ public class MainWindow extends JFrame implements ActionListener {
 
     public MainWindow() {
         super("Aston test tasks");
-        setSize(700, 300);
+        setSize(800, 360);
         setLocation(700, 200);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
