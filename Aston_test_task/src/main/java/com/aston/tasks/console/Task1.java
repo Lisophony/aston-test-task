@@ -6,7 +6,7 @@ public class Task1 extends BaseTask {
     public static void sayHello() {
         System.out.println("Введите число");
         try {
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim();
             if(input.isEmpty()) throw new EmptyInputException();
             int number = Integer.parseInt(input);
             if(number > 7) System.out.println("Привет!");
