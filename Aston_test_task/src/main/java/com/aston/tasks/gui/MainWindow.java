@@ -88,13 +88,16 @@ public class MainWindow extends JFrame implements ActionListener {
         mainPanel.add(outputsPanel);
         mainPanel.add(Box.createRigidArea(new Dimension(40, 0)));
         getContentPane().add(mainPanel);
+        this.getRootPane().setDefaultButton(okButton);
+
+
         setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
-        outputText1.setText(TasksActions.sayHello(input1.getText()));
-        outputText2.setText(TasksActions.helloViacheslav(input2.getText()));
-        outputText3.setText(TasksActions.getArrayDivisibleBy3(input3.getText()));
+        outputText1.setText(input1.getText().length() != 0 ? TasksActions.sayHello(input1.getText()) : "Вы ничего не ввели");
+        outputText2.setText(input2.getText().length() != 0 ? TasksActions.helloViacheslav(input2.getText()) : "Вы ничего не ввели");
+        outputText3.setText(input3.getText().length() != 0 ? TasksActions.getArrayDivisibleBy3(input3.getText()) : "Вы ничего не ввели");
     }
 }
