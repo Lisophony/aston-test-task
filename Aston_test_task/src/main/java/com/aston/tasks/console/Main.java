@@ -1,4 +1,4 @@
-package com.aston.tasks;
+package com.aston.tasks.console;
 
 public class Main {
     public static void main(String[] args) {

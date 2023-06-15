@@ -1,10 +1,9 @@
-package com.aston.tasks;
+package com.aston.tasks.console;
 
 import java.util.Arrays;
 
 public class Task3 extends BaseTask {
     public static int[] getArray(String[] input) {
-
         return Arrays.stream(input).mapToInt(Integer::parseInt).toArray();
     }
 

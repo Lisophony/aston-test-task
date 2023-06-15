@@ -1,4 +1,4 @@
-package com.aston.tasks;
+package com.aston.tasks.console;
 
 public class Task2 extends BaseTask{
     public static void helloViacheslav() {

@@ -1,4 +1,4 @@
-package com.aston.tasks;
+package com.aston.tasks.console;
 
 import java.util.Scanner;
 
