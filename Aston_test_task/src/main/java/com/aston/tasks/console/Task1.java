@@ -13,7 +13,8 @@ public class Task1 extends BaseTask {
         catch (NumberFormatException e) {
             System.out.println("Введённые данные некорректны");
             sayHello();
-        } catch (EmptyInputException e) {
+        }
+        catch (EmptyInputException e) {
             System.out.println(e.getMessage());
             sayHello();
         }

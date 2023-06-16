@@ -23,7 +23,8 @@ public class TasksActions {
         try {
             String name = input.trim();
             if(name.isEmpty()) throw new EmptyInputException();
-        } catch (EmptyInputException e) {
+        }
+        catch (EmptyInputException e) {
             return e.getMessage();
         }
         return input.equals("Вячеслав") ? "Привет, Вячеслав" : "Нет такого имени";
@@ -44,7 +45,8 @@ public class TasksActions {
         }
         catch (NumberFormatException e) {
             return "Проверьте введённые данные";
-        } catch (EmptyInputException e) {
+        }
+        catch (EmptyInputException e) {
             return e.getMessage();
         }
     }

@@ -90,7 +90,6 @@ public class MainWindow extends JFrame implements ActionListener {
         getContentPane().add(mainPanel);
         this.getRootPane().setDefaultButton(okButton);
 
-
         setVisible(true);
     }
 

@@ -16,6 +16,5 @@ public class Task2 extends BaseTask{
             System.out.println(e.getMessage());
             helloViacheslav();
         }
-
     }
 }
