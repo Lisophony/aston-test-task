@@ -11,7 +11,7 @@
 ### Способ 1
 1 Откройте терминал и склонируйте проект : `git clone https://github.com/Lisophony/aston-test-task.git`
 
-2 Перейдите в папку проекта : `cd Aston_test_task` 
+2 Перейдите в папку проекта : `cd Phan_Java` 
 
 3 Для запуска консольного варианта введите maven команду : `mvn compile exec:java -Dexec.mainClass="com.aston.tasks.console.Main"`
 
