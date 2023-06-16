@@ -11,7 +11,7 @@ public class Task1 extends BaseTask {
             if(Integer.parseInt(input) > 7) System.out.println("Привет!");
         }
         catch (NumberFormatException e) {
-            System.out.println("Введённые данные не корректны");
+            System.out.println("Введённые данные некорректны");
             sayHello();
         } catch (EmptyInputException e) {
             System.out.println(e.getMessage());

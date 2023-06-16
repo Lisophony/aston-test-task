@@ -21,7 +21,7 @@ public class Task3 extends BaseTask {
             });
         }
         catch (NumberFormatException e) {
-            System.out.println("Введённые данные не корректны");
+            System.out.println("Введённые данные некорректны");
             printDivisibleBy3();
         } catch (EmptyInputException e) {
             System.out.println(e.getMessage());
